@@ -1,13 +1,13 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 
 st.set_page_config(page_title="Failure Risk Predictor", layout="wide")
 
 
 # Load the trained model and encoder
-model = joblib.load('gb_model.joblib')
-label_encoder = joblib.load('label_encoder.joblib')
+model = pickle.load('gb_model.pkl')
+label_encoder = pickle.load('label_encoder.pkl')
 
 
 st.title("Data Center Failure Risk Predictor")
