@@ -5,11 +5,9 @@ import joblib
 st.set_page_config(page_title="Failure Risk Predictor", layout="wide")
 
 
-import pickle
-with open('gb_model.pkl', 'rb') as f:
-    model = pickle.load(f)
-with open('label_encoder.pkl', 'rb') as f:
-    label_encoder = pickle.load(f)
+# Load the trained model and encoder
+model = joblib.load('gb_model.joblib')
+label_encoder = joblib.load('label_encoder.joblib')
 
 
 st.title("Data Center Failure Risk Predictor")
